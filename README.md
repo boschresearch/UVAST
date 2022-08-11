@@ -55,21 +55,15 @@ All training scrips for all three datasets are provided with the [pretrained_mod
 For more information regarding the flags, please look into  the information for each flag in `run.py`.
 An example training script for the first split of the `gtea` dataset is provided below:
 
-<details>
-<summary>Training script for stage 1:</summary>
-
+<strong>Training script for stage 1:</strong>
 ``` python
 python run.py --use_cuda --step_size 800 --dataset gtea --split 1 --split_segments --use_pe_tgt --do_framewise_loss --do_framewise_loss_g --framewise_loss_g_apply_nothing --do_segwise_loss --do_segwise_loss_g --segwise_loss_g_apply_logsoftmax --do_crossattention_action_loss_nll
 ```
-</details>
 
-<details>
-<summary>Training script for stage 2:</summary>
-
+<strong>Training script for stage 2:</strong>
 ``` python
 python run.py --use_cuda --dataset gtea --split 1 --split_segments --use_pe_tgt --use_alignment_dec --do_crossattention_dur_loss_ce --aug_rnd_drop --pretrained_model pretrained_models/gtea/split1/gtea_split1_stage1.model
 ```
-</details>
 
 Note that for this stage you need to specify the pretrained model from the first stage via the `--pretrained_model` flag.
 
@@ -82,29 +76,20 @@ To run the inference code the flag `--inference_only` needs to be added as well 
 
 An example script for testing a model is provided below:
 
-<details>
-<summary>Evaluate Alignment Decoder:</summary>
-
+<strong>Evaluate Alignment Decoder:</strong>
 ``` python
 python run.py --use_cuda --dataset gtea --split 1 --path_inference_model pretrained_models/gtea/split1/gtea_split1_stage2.model --inference_only --split_segments --use_pe_tgt --use_alignment_dec 
 ```            
-</details>
 
-<details>
-<summary>Evaluate with Viterbi:</summary>
-
+<strong>Evaluate with Viterbi:</strong>
 ``` python
 python run.py --use_cuda --dataset gtea --split 1 --use_viterbi --viterbi_sample_rate 1 --path_inference_model pretrained_models/gtea/split1/gtea_split1_stage1.model --inference_only --split_segments --use_pe_tgt
 ```
-</details> 
 
-<details>
-<summary>Evaluate with FIFA:</summary>
-
+<strong>Evaluate with FIFA:</strong>
 ``` python
 python run.py --use_cuda --dataset gtea --split 1 --use_fifa --fifa_init_dur --path_inference_model pretrained_models/gtea/split1/gtea_split1_stage2.model --inference_only --split_segments --use_pe_tgt --use_alignment_dec
 ```
-</details>
 
   
 ## Citation
