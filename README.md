@@ -8,6 +8,12 @@ The code allows users to reproduce and extend the results of our method. Please 
 
 This repository implements UVAST, a method for temporal action segmentation via sequence-to-sequence translation.
 Details regarding the required environment, datasets, training scripts and pretrained models can be found below.
+ <br />
+  <br />
+   <br />
+
+![ECCV2022](https://user-images.githubusercontent.com/25614955/179375271-1dd0eb92-45fa-42d9-8a37-8bd86bcee014.gif)
+
 
 ## Enviroment
 Pytorch == `1.10.0+cu102`, 
