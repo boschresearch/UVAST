@@ -52,7 +52,13 @@ Use [this link](https://zenodo.org/record/3625992#.YsMSBdLMJhF) to download the 
 
 Extract `data.zip` so that `data` is placed inside the `uvast` folder. Otherwise you need to modify the `--data_root` flag to point to the `data` folder.
 
-## Training:
+### Compute mean durations
+To compute the mean durations to be used in FIFA/Viterbi call (and optionally pass `--data_root`):
+``` python
+python compute_mean_dur.py
+```
+
+## Training
 We train the model in a two stages process:
 In the first stage, we train the encoder and the transcript decoder using Eq. (6) from the paper (and without the alignment decoder).
 In the second stage, we optionally train the alignment decoder (alternatively, Viterbi or FIFA can be used to compute durations). 
@@ -74,7 +80,7 @@ python run.py --use_cuda --dataset gtea --split 1 --split_segments --use_pe_tgt 
 Note that for this stage you need to specify the pretrained model from the first stage via the `--pretrained_model` flag.
 
 
-## Evaluation:
+## Evaluation
 
 While the transcript decoder predicts the sequence of actions in the video, we propose three different approaches for predicting durations: a learnable alignment decoder (stage 2), or FIFA/Viterbi.
 All evaluation scripts along with pretrained model are provided in [pretrained_models](pretrained_models).
@@ -115,7 +121,7 @@ This project is open-sourced under the AGPL-3.0 license. See the [License](LICEN
 
 For a list of other open source components included in this project, see the file [3rd-party-licenses.txt](3rd-party-licenses.txt).
 
-## Purpose of the project
+## Purpose of the Project
 This software is a research prototype, solely developed for and published as
 part of the publication cited above. It will neither be
 maintained nor monitored in any way.
