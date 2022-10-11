@@ -1,7 +1,7 @@
 # UVAST: Unified Fully and Weakly Supervised Temporal Action Segmentation via Sequence to Sequence Translation
 
 Official PyTorch implementation of the ECCV 2022 paper:
-[UVAST: Unified Fully and Weakly Supervised Temporal Action Segmentation via Sequence to Sequence Translation](https://arxiv.org/tbd) 
+[UVAST: Unified Fully and Weakly Supervised Temporal Action Segmentation via Sequence to Sequence Translation](https://arxiv.org/abs/2209.00638) 
 The code allows users to reproduce and extend the results of our method. Please cite the paper when reporting, reproducing or extending the results.
 
 ## Overview
